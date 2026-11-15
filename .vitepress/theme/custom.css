@@ -1,0 +1,122 @@
+/* DREMT theme: primary #0F172A (navy), accent #E5C07B (gold). */
+
+:root {
+  --dremt-navy: #0f172a;
+  --dremt-navy-2: #1e293b;
+  --dremt-navy-3: #334155;
+  --dremt-gold: #e5c07b;
+  --dremt-gold-deep: #9a6b16; /* gold that keeps 4.5:1 contrast on white */
+
+  --vp-c-brand-1: var(--dremt-navy);
+  --vp-c-brand-2: var(--dremt-navy-2);
+  --vp-c-brand-3: var(--dremt-navy);
+  --vp-c-brand-soft: rgba(229, 192, 123, 0.18);
+
+  --vp-button-brand-bg: var(--dremt-navy);
+  --vp-button-brand-border: var(--dremt-navy);
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-hover-bg: var(--dremt-navy-2);
+  --vp-button-brand-hover-border: var(--dremt-navy-2);
+  --vp-button-brand-hover-text: var(--dremt-gold);
+  --vp-button-brand-active-bg: var(--dremt-navy-3);
+  --vp-button-brand-active-border: var(--dremt-navy-3);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, var(--dremt-navy) 30%, var(--dremt-gold-deep));
+  --vp-home-hero-image-background-image: radial-gradient(circle, rgba(229, 192, 123, 0.45) 0%, rgba(229, 192, 123, 0) 70%);
+  --vp-home-hero-image-filter: blur(48px);
+
+  --dremt-link-underline: var(--dremt-gold);
+  --dremt-accent-bar: var(--dremt-gold);
+}
+
+.dark {
+  --vp-c-bg: #0f172a;
+  --vp-c-bg-alt: #0b1120;
+  --vp-c-bg-elv: #131d33;
+  --vp-c-bg-soft: #1e293b;
+
+  --vp-c-brand-1: var(--dremt-gold);
+  --vp-c-brand-2: #edd09b;
+  --vp-c-brand-3: var(--dremt-gold);
+  --vp-c-brand-soft: rgba(229, 192, 123, 0.16);
+
+  --vp-button-brand-bg: var(--dremt-gold);
+  --vp-button-brand-border: var(--dremt-gold);
+  --vp-button-brand-text: var(--dremt-navy);
+  --vp-button-brand-hover-bg: #edd09b;
+  --vp-button-brand-hover-border: #edd09b;
+  --vp-button-brand-hover-text: var(--dremt-navy);
+  --vp-button-brand-active-bg: #d4ab5f;
+  --vp-button-brand-active-border: #d4ab5f;
+
+  --vp-home-hero-name-background: linear-gradient(120deg, #f8fafc 30%, var(--dremt-gold));
+  --vp-home-hero-image-background-image: radial-gradient(circle, rgba(229, 192, 123, 0.3) 0%, rgba(229, 192, 123, 0) 70%);
+
+  --vp-button-alt-bg: #1e293b;
+  --vp-button-alt-border: #334155;
+  --vp-button-alt-hover-bg: #334155;
+  --vp-button-alt-hover-border: #475569;
+
+  --vp-code-block-bg: #0b1120;
+  --dremt-link-underline: rgba(229, 192, 123, 0.55);
+}
+
+/* Links: navy text with a gold underline in light mode, gold in dark mode. */
+.vp-doc a {
+  text-decoration-color: var(--dremt-link-underline);
+  text-decoration-thickness: 2px;
+}
+
+/* Gold accent on section headings. */
+.vp-doc h2 {
+  border-top-color: var(--vp-c-divider);
+}
+.vp-doc h2::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 3px;
+  margin-bottom: 14px;
+  border-radius: 2px;
+  background: var(--dremt-accent-bar);
+}
+
+/* Mobile: long addresses wrap instead of widening the page; tables and code scroll inside themselves. */
+.vp-doc :not(pre) > code {
+  overflow-wrap: anywhere;
+}
+.vp-doc table {
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.vp-doc div[class*='language-'] {
+  max-width: 100%;
+}
+html,
+body {
+  overflow-x: clip;
+}
+
+/* <details> blocks used for the FAQ. */
+.vp-doc details.faq {
+  margin: 12px 0;
+  padding: 0 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+}
+.vp-doc details.faq > summary {
+  padding: 12px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+.vp-doc details.faq[open] > summary {
+  border-bottom: 1px solid var(--vp-c-divider);
+  margin-bottom: 12px;
+}
+
+/* Home page feature cards: thin gold top edge. */
+.VPFeature {
+  border-top: 2px solid var(--dremt-gold) !important;
+}
